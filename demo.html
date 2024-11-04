@@ -4,87 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CMU Master's Program Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: white; /* Cream */
+            background: #f4f4f4;
+            color: #333;
         }
         .header, .footer {
-            background: #e07802; /* Teal */
+            background: #e07802;
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
         }
+        .header h1 {
+            margin: 10px 0;
+        }
+        .header .contact-info {
+            font-size: 0.9em;
+        }
         .content {
+            max-width: 1100px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .resume-section {
+            background: white;
             padding: 20px;
-            max-width: 1000px;
-            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .resume-section h2 {
+            margin-top: 0;
+            color: #e07802;
+        }
+        .resume-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .resume-section ul li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        .resume-section ul li::before {
+            content: "•";
+            color: #e07802;
+            padding-right: 10px;
+        }
+        .project, .education, .experience {
+            margin-top: 20px;
+        }
+        .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
         .project {
-            background: #ffbb00; /* Cream */
+            background: #ffbb00;
             border: 1px solid #e08f02;
-            padding: 25px;
-            margin: 10px;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
         }
         .project img {
             width: 100%;
-            height: auto;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
         }
-        .project h2, .project p {
-            color: #36454f; /* Dark Gray */
+        .icon {
+            color: #e07802;
+            margin-right: 8px;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-group a {
+            text-decoration: none;
+            background: #e07802;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 0 10px;
+            display: inline-block;
+        }
+        .button-group a:hover {
+            background: #ca6e02;
+        }
+        .video-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .video-section iframe {
+            width: 100%;
+            max-width: 600px;
+            height: 340px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
 <body>
+
     <div class="header">
         <img src="https://www.cmu.edu/brand/downloads/assets/images/wordmarks-600x600-min.jpg" alt="CMU Logo" style="height: 50px;">
-        <h1>Bucky Yu <br/>
-            Master's Program Projects Showcase</h1>
+        <h1>Chenkai "Bucky" Yu</h1>
+        <p class="contact-info">
+            <i class="fas fa-map-marker-alt icon"></i> Sunnyvale, CA | 
+            <i class="fas fa-phone icon"></i> 332-248-8588 | 
+            <i class="fas fa-envelope icon"></i> chenkaiy@andrew.cmu.edu |
+            <i class="fab fa-linkedin icon"></i> <a href="https://www.linkedin.com/in/bucky-yu" target="_blank" style="color: white;">LinkedIn</a>
+        </p>
     </div>
+
     <div class="content">
-        <!-- Project 1 -->
-        <div class="project">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78u8OI_1DfbOxohByiWOyzDI9fhdyOKKohVwjzMoLxy8imxBN4PE6KafdXgxQSoLKzyU&usqp=CAU" alt="Project 1 Image">
-            <h2>Advanced Algorithms Visualizer</h2>
-            <p>An interactive tool that helps visualize complex algorithms in real-time.</p>
+
+        <!-- Button Group for Downloads -->
+        <div class="button-group">
+            <a href="BUCKYYU.pdf" download>Download Resume</a>
+            <a href="Lehigh_Transcript.pdf" download>Download Lehigh Transcript</a>
+            <a href="CMUTranscript.pdf" download>Download CMU Transcript</a>
         </div>
-        <!-- Project 2 -->
-        <div class="project">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78u8OI_1DfbOxohByiWOyzDI9fhdyOKKohVwjzMoLxy8imxBN4PE6KafdXgxQSoLKzyU&usqp=CAU" alt="Project 2 Image">
-            <h2>Smart Campus Navigator</h2>
-            <p>A mobile app leveraging AI to guide students around campus efficiently.</p>
+
+        <!-- Education Section -->
+        <div class="resume-section education">
+            <h2><i class="fas fa-graduation-cap icon"></i> Education</h2>
+            <p><strong>Carnegie Mellon University</strong> - Master of Science in Software Engineering<br>August 2023 – December 2024</p>
+            <p>Relevant Coursework: Foundations of Software Engineering, Data Science for Software Engineering, Software Engineering Method</p>
+            <p><strong>Lehigh University</strong> - Bachelor of Arts & Bachelor of Science, Dual Degree in Computer Science Engineering & Economics<br>September 2019 – May 2023</p>
+            <p>Relevant Coursework: Discrete Structures & Algorithms, Database Theory and Application, Artificial Intelligence: Theory and Practice</p>
         </div>
-        <!-- Project 3 -->
-        <div class="project">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78u8OI_1DfbOxohByiWOyzDI9fhdyOKKohVwjzMoLxy8imxBN4PE6KafdXgxQSoLKzyU&usqp=CAU" alt="Project 3 Image">
-            <h2>IoT Home Automation System</h2>
-            <p>Develop a network of devices that can autonomously manage a smart home.</p>
+
+        <!-- Technical Skills Section -->
+        <div class="resume-section">
+            <h2><i class="fas fa-laptop-code icon"></i> Technical Skills</h2>
+            <ul>
+                <li><strong>Coding Tools:</strong> Python, Go, HTML, Tailwind CSS, TypeScript, MySQL, REST API, GraphQL, Socket, React, Node.JS</li>
+                <li><strong>Other SDE Tools:</strong> Agile, Scrum, Git, CI/CD, Data Mining and Validation, Google Analytics, ESLint, AWS S3</li>
+            </ul>
         </div>
-        <!-- Project 4 -->
-        <div class="project">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78u8OI_1DfbOxohByiWOyzDI9fhdyOKKohVwjzMoLxy8imxBN4PE6KafdXgxQSoLKzyU&usqp=CAU" alt="Project 4 Image">
-            <h2>Blockchain-Based Voting System</h2>
-            <p>Secure and transparent voting mechanism for university elections.</p>
+
+        <!-- Experience Section -->
+        <div class="resume-section experience">
+            <h2><i class="fas fa-briefcase icon"></i> Experience</h2>
+            <div>
+                <h3>Software Engineering Intern, Influxer</h3>
+                <p>June 2024 – August 2024</p>
+                <ul>
+                    <li>Developed a key Enterprise System module that enabled large-scale data editing, reducing API calls by 90%.</li>
+                    <li>Engineered backend services using Go for data synchronization and leveraged GraphQL with Shopify APIs.</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Graduate Teaching Assistant, Foundations of Software Engineering, CMU</h3>
+                <p>January 2024 – June 2024</p>
+                <ul>
+                    <li>Mentored 20 graduate students on MVC design, software patterns, and RESTful API development.</li>
+                    <li>Oversaw Unit/Integration Tests for Quality Assurance.</li>
+                </ul>
+            </div>
         </div>
-        <!-- Project 5 -->
-        <div class="project">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78u8OI_1DfbOxohByiWOyzDI9fhdyOKKohVwjzMoLxy8imxBN4PE6KafdXgxQSoLKzyU&usqp=CAU" alt="Project 5 Image">
-            <h2>AI-Powered Resume Assistant</h2>
-            <p>A tool that uses machine learning to optimize resumes for job applications.</p>
+
+        <!-- Projects Section -->
+        <div class="resume-section projects">
+            <h2><i class="fas fa-project-diagram icon"></i> Projects</h2>
+            <div class="projects-grid">
+                <div class="project">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78u8OI_1DfbOxohByiWOyzDI9fhdyOKKohVwjzMoLxy8imxBN4PE6KafdXgxQSoLKzyU&usqp=CAU" alt="Incident Response Product">
+                    <h3>Incident Response Product</h3>
+                    <p>A mobile platform to redefine emergency responses, focusing on coordination improvements.</p>
+                </div>
+                <div class="project">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78u8OI_1DfbOxohByiWOyzDI9fhdyOKKohVwjzMoLxy8imxBN4PE6KafdXgxQSoLKzyU&usqp=CAU" alt="Pull Request Approval Prediction">
+                    <h3>Pull Request Approval Prediction</h3>
+                    <p>GitHub CI service using ML for pull request approval predictions with hyperparameter tuning.</p>
+                </div>
+                <div class="project">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT78u8OI_1DfbOxohByiWOyzDI9fhdyOKKohVwjzMoLxy8imxBN4PE6KafdXgxQSoLKzyU&usqp=CAU" alt="Emergency Social Network">
+                    <h3>Emergency Social Network</h3>
+                    <p>Developed a social network app for emergency situations with CI/CD methodologies.</p>
+                </div>
+            </div>
         </div>
+
+        <!-- Video Section -->
+        <div class="resume-section video-section">
+            <h2><i class="fas fa            video icon"></i> Self-Introductory Video</h2>
+            <p>Watch a short video introduction to learn more about my background, skills, and career goals.</p>
+            <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
     </div>
+
     <div class="footer">
         <p>© 2024 Carnegie Mellon University</p>
     </div>
